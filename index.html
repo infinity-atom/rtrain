@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
+    <title>RealTrain</title>
+
+    <script type="text/javascript">
+        $(window).on('load', function() {
+            if(!localStorage.getItem("showModal")) {
+                $('#loading-indicator-modal').modal('show');
+                setTimeout(()=>{
+                    $('#loading-indicator-modal').modal('hide');
+                }, 7000);
+                localStorage.setItem("showModal", "done");
+            }
+        });
+        $(".rtrain-failed-indev").each(function() {
+            this.addEventListener("click", function() {
+                $("#modal-indev").modal("show");
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="modal fade" id="loading-indicator-modal">
+        <div class="modal-dialog">
+            <div class="modal-body bg-light text-dark">
+                <b>Welcome to RealTrain's official website!</b>
+            </div>
+            <div class="modal-body bg-danger text-light">
+                <span>Remember that RealTrain is still in development and many features of it (and this site) is not complete. <b>This popup will dismiss automatically, or you can click anywhere to also dismiss it.</b></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-indev">
+        <div class="modal-dialog">
+            <div class="modal-body bg-warning text-light">
+                <span>This function is currently not available.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark text-light pt-1 pb-1">
+        <img src="images/RealTrain_Full.png" alt="RealTrain Logo" height="35">
+    </div>
+    <div class="container-fluid bg-dark text-light pt-3 pb-3">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a href="/index.html" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link rtrain-failed-indev">Download</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Help</a>
+                <ul class="dropdown-menu shadow-lg">
+                    <li><a class="dropdown-item" href="#">Tutorial</a></li>
+                    <li><h5 class="dropdown-header">Guides</h5></li>
+                    <li><a class="dropdown-item" href="#">Driving Guide</a></li>
+                    <li><a class="dropdown-item" href="#">Maps and Trains</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container-fluid bg-success text-light pt-5 pb-5">
+        <div class="container">
+            <h1>Welcome to the RealTrain website.</h1>
+            <p>RealTrain is an <b>in-development</b> train simulator.</p>
+        </div>
+    </div>
+</body>
+</html>
