@@ -1,53 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- UNCOMMENT CODE WHEN PUSHING TO GH -->
+    <base href="/rtrain/">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <base href="/rtrain/">
     <title>RealTrain</title>
 
     <script type="text/javascript">
-        $(window).on('load', function() {
-            if(!localStorage.getItem("showModal")) {
-                $('#loading-indicator-modal').modal('show');
-                setTimeout(()=>{
-                    $('#loading-indicator-modal').modal('hide');
-                }, 7000);
-                localStorage.setItem("showModal", "done");
-            }
-        });
-        $(".rtrain-failed-indev").each(function() {
-            this.addEventListener("click", function() {
-                $("#modal-indev").modal("show");
-            })
-        });
+        console.log("scripts working");
     </script>
 </head>
 <body>
-    <div class="modal fade" id="loading-indicator-modal">
-        <div class="modal-dialog">
-            <div class="modal-body bg-light text-dark">
-                <b>Welcome to RealTrain's official website!</b>
-            </div>
-            <div class="modal-body bg-danger text-light">
-                <span>Remember that RealTrain is still in development and many features of it (and this site) is not complete. <b>This popup will dismiss automatically, or you can click anywhere to also dismiss it.</b></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal-indev">
-        <div class="modal-dialog">
-            <div class="modal-body bg-warning text-light">
-                <span>This function is currently not available.</span>
-            </div>
-        </div>
-    </div>
-
     <div class="container-fluid bg-dark text-light pt-1 pb-1">
-        <img src="images/RealTrain_Full.png" alt="RealTrain Logo" height="35">
+        <img src="/images/RealTrain_Full.png" alt="RealTrain Logo" height="35">
     </div>
     <div class="container-fluid bg-dark text-light pt-3 pb-3">
         <ul class="nav nav-pills">
@@ -62,7 +33,7 @@
                 <ul class="dropdown-menu shadow-lg">
                     <li><a class="dropdown-item" href="#">Tutorial</a></li>
                     <li><h5 class="dropdown-header">Guides</h5></li>
-                    <li><a class="dropdown-item" href="#">Driving Guide</a></li>
+                    <li><a class="dropdown-item" href="#">Driving Guides</a></li>
                     <li><a class="dropdown-item" href="#">Maps and Trains</a></li>
                 </ul>
             </li>
@@ -71,10 +42,61 @@
             </li>
         </ul>
     </div>
-    <div class="container-fluid bg-success text-light pt-5 pb-5">
-        <div class="container">
+    <div class="container-fluid" style="padding-top: 125px; padding-bottom: 125px; background-image: url(/images/backgrounds/WongTaiSin_CTrain.png); background-size: cover; background-position-y: center;">
+        <div class="container text-light">
             <h1>Welcome to the RealTrain website.</h1>
             <p>RealTrain is an <b>in-development</b> train simulator.</p>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark">
+        <br>
+    </div>
+    <div class="container-fluid bg-primary pt-3 pb-3">
+        <div class="container text-light">
+            <h1>Updates</h1>
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-header">
+                        Update 0.3 
+                        <span class="badge bg-danger">Beta</span>
+                        <br>4th September 2023
+                    </div>
+                    <div class="card-body">
+                        Changelog<br>
+                        <ul>
+                            <li>Added PSDs</li>
+                            <li>Added MTR C-Train model</li>
+                            <li>Normal map added to tiles</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-dark">
+                            <a href="/index.html" class="nav-link">Download (unavailable)</a>
+                        </button>
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-header">
+                        Update 0.2 
+                        <span class="badge bg-danger">Beta</span>
+                        <br>20th August 2023
+                    </div>
+                    <div class="card-body">
+                        Changelog<br>
+                        <ul>
+                            <li>Added new map "MTR Kwun Tong Line"</li>
+                            <li>Added station "Wong Tai Sin"</li>
+                            <li>Escalator models added</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-dark">
+                            <a href="/index.html" class="nav-link">Download (unavailable)</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
